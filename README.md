@@ -1,6 +1,6 @@
-## MR_PathPlanner
+# MR_PathPlanner
 
-# To run the APG_RRT path planner:
+## To run the APG_RRT path planner:
 -> Build and source the workspace
 
 -> ros2 run path_planner apg_rrt_planner
