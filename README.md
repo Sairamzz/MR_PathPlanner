@@ -14,4 +14,6 @@
 ## To run the APG_RRT path planner in VSCODE:
 -> python3 apg_rrt.py
 
+-> python3 APG_RRT_COMPARISON.py (for the comparison plots)
+
 
