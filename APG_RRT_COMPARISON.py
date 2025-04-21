@@ -3,7 +3,6 @@ import numpy as np
 import random
 import time
 
-# Node class
 class Node:
     def __init__(self, x, y):
         self.x = x
@@ -39,7 +38,7 @@ def backtrack_path(node):
         node = node.parent
     return path[::-1]
 
-def generate_guide_paths(scenario='u_turn'):
+def generate_guide_paths(scenario='u_turn'): # preset guide paths
     if scenario == 'u_turn':
         return [[Node(10 + i, 50) for i in range(15)] +
                 [Node(25, 50 + i*2) for i in range(5)] +
@@ -68,7 +67,7 @@ def compute_path_length(path):
 
 def rrt(start, goal, map_size, obstacles, max_iterations=10000, step_size=5):
     nodes = [start]
-    for _ in range(max_iterations):
+    for i in range(max_iterations):
         rand = get_random_point(map_size, obstacles)
         nearest = nearest_node(nodes, rand)
         new_node = steer(nearest, rand, step_size)
@@ -113,33 +112,32 @@ def apg_rrt(start, goal, map_size, obstacles, max_iter=2000, max_dist=10, buffer
                 new_node.parent = nearest
                 nodes.append(new_node)
 
-        # Normalize weights
         total = sum(weights)
         weights = [w / total for w in weights]
 
         for node in nodes:
             if distance(node, goal_node) <= max_dist and is_collision_free(node, goal_node, obstacles, buffer):
                 goal_node.parent = node
-                print("✅ APG-RRT Goal reached!")
+                print("Goal reached!")
                 return backtrack_path(goal_node), len(nodes)
 
-    print("❌ APG-RRT No path found.")
+    print("No path found.")
     return None, len(nodes)
 
 def create_obstacle_map(size, scenario='long_corridor'):
     grid = np.zeros(size, dtype=int)
     if scenario == 'long_corridor':
-        # grid[30:70, 40:60] = 1    # Vertical corridor walls
-        grid[0:3, :] = 1       # Top wall
-        grid[97:100, :] = 1       # Bottom wall
+        # grid[30:70, 40:60] = 1   
+        grid[0:3, :] = 1       
+        grid[97:100, :] = 1       
         grid[10:100, 30:40] = 1
         grid[0:90, 70:80] = 1
 
     elif scenario == 'right_angle_bends':
-        grid[20:60, 40:45] = 1   # Vertical wall
-        grid[55:60, 40:80] = 1   # Horizontal wall
-        grid[30:35, 10:50] = 1   # Another horizontal section
-        grid[60:80, 70:75] = 1   # Another vertical block
+        grid[20:60, 40:45] = 1   
+        grid[55:60, 40:80] = 1   
+        grid[30:35, 10:50] = 1   
+        grid[60:80, 70:75] = 1   
 
     elif scenario == 'u_turn':
 
@@ -149,13 +147,13 @@ def create_obstacle_map(size, scenario='long_corridor'):
         grid[70:80, 10:100] = 1
         
 
-    else:  # Default mixed environment
-        grid[30:70, 40:60] = 1    # Vertical block
-        grid[10:20, 10:50] = 1    # Horizontal corridor
-        grid[70:90, 20:30] = 1    # Small vertical block
-        grid[50:55, 60:100] = 1   # Horizontal barrier
-        grid[20:30, 70:80] = 1    # Isolated block
-        grid[60:70, 5:15] = 1     # Another isolated block
+    else:  # Random environment
+        grid[30:70, 40:60] = 1    
+        grid[10:20, 10:50] = 1    
+        grid[70:90, 20:30] = 1
+        grid[50:55, 60:100] = 1   
+        grid[20:30, 70:80] = 1    
+        grid[60:70, 5:15] = 1     
     return grid
 
 def visualize(map_size, obstacles, rrt_path, apg_path):
@@ -171,7 +169,6 @@ def visualize(map_size, obstacles, rrt_path, apg_path):
     plt.title("Path Comparison")
     plt.show()
 
-# Main execution
 map_size = (100, 100)
 obstacles = create_obstacle_map(map_size)
 
