@@ -1,4 +1,3 @@
-
 import numpy as np
 import matplotlib.pyplot as plt
 import random
@@ -51,7 +50,7 @@ def apg_rrt(start, goal, space, obstacle_list, max_iter=200, max_dist=10, buffer
     for i in range(max_iter):
 
         if len(nodes) > max_nodes:
-            print("Node limit reached, stopping early.")
+            print("Node limit reached, stopping early.") # For limited laptop memory
             break
 
         if random.random() < 0.6:
@@ -80,7 +79,6 @@ def apg_rrt(start, goal, space, obstacle_list, max_iter=200, max_dist=10, buffer
                 new_node.parent = nearest
                 nodes.append(new_node)
 
-        # Normalize weights
         total = sum(weights)
         weights = [w / total for w in weights]
 
@@ -108,18 +106,17 @@ def plot_result(path, start, goal, obstacles, space):
         x, y = zip(*path)
         plt.plot(x, y, 'r-', linewidth=2, label="Path")
     else:
-        print("No path to plot.")
+        print("No path found")
 
     plt.plot(start[0], start[1], 'go', label='Start')
     plt.plot(goal[0], goal[1], 'ro', label='Goal')
     plt.legend()
     plt.show()
 
-# Test run
 space = (100, 100)
 start = (5, 5)
 goal = (90, 90)
-obstacle_list = [(40, 40, 10), (60, 60, 10), (20, 80, 10), (70, 20, 10)]
+obstacle_list = [(40, 40, 10), (60, 60, 10), (20, 80, 10), (70, 20, 10)] # circular obstacles
 
 path = apg_rrt(start, goal, space, obstacle_list)
 plot_result(path, start, goal, obstacle_list, space)
