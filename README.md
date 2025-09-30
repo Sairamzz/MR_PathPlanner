@@ -1,5 +1,9 @@
-# MR_PathPlanner
+# MR_PathPlanner - APG-RRT Path Planner
 This project was done as a part of the ME 5550 (Mobile Robotics) course at Northeastern University.
+
+## About the Project
+
+
 
 ### To run the APG_RRT path planner in ROS2:
 - Build and source the workspace
@@ -8,6 +12,6 @@ This project was done as a part of the ME 5550 (Mobile Robotics) course at North
 - ros2 launch turtlebot3_cartographer cartographer.launch.py use_sim_time:=true
 - rviz2 (To visualize)
 
-## To run the APG_RRT path planner in VSCODE:
+### To run the APG_RRT path planner in VSCODE:
 - python3 apg_rrt.py
 - python3 APG_RRT_COMPARISON.py (for the comparison plots)
