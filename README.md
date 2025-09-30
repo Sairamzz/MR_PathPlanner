@@ -2,7 +2,9 @@
 This project was done as a part of the ME 5550 (Mobile Robotics) course at Northeastern University.
 
 This project is an implementation inspired by the work of Z. Wang, P. Li, Z. Wang, and Z. Li, “APG-RRT: Sampling-Based Path Planning Method for Small Autonomous Vehicle in Closed Scenarios,” in IEEE Access, vol. 12, pp. 25731–25739, 2024, doi: 10.1109/ACCESS.2024.3359643
-. Their research introduced the Adaptive Path Guided Rapidly-exploring Random Tree (APG-RRT), a variant of RRT designed to improve path quality and convergence in structured environments. My work builds upon this idea by implementing the algorithm in both 2D simulated environments and in a ROS2-based robotic simulation, while comparing its performance against the standard RRT.
+
+
+Their research introduced the Adaptive Path Guided Rapidly-exploring Random Tree (APG-RRT), a variant of RRT designed to improve path quality and convergence in structured environments. My work builds upon this idea by implementing the algorithm in both 2D simulated environments and in a ROS2-based robotic simulation, while comparing its performance against the standard RRT.
 
 
 * [Objective](#Objective)
