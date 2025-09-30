@@ -18,7 +18,8 @@ The primary objective of this project was to develop and evaluate the APG-RRT al
 - Sampling probabilities are dynamically adjusted based on the algorithm’s history, with successful expansions reinforcing guide paths and failed attempts reducing their weight. To ensure safe navigation, obstacle boundaries are expanded with a buffer to prevent near-collision trajectories.
 - At the same time, the algorithm retains a degree of random exploration to avoid local minima, preserving the exploratory nature of RRT. The implementation also integrates seamlessly with ROS2, where planned paths can be published as topics and visualized in RViz.
 
-<img width="675" height="609" alt="image" src="https://github.com/user-attachments/assets/91f4d641-3cbe-4b3a-b119-ecfb2b17036b" />
+    <img width="675" height="609" alt="image" src="https://github.com/user-attachments/assets/91f4d641-3cbe-4b3a-b119-ecfb2b17036b" />
+         (APG-RRT Structure/Framework)
 
 ## Implementation:
 ### To run the APG_RRT path planner in ROS2:
