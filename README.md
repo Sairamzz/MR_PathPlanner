@@ -7,7 +7,8 @@ This project is an implementation inspired by the work of Z. Wang, P. Li, Z. Wan
 
 * [Objective](#Objective)
 * [Features](#Features)
-* [Implementation](#Implementation)
+* [Results](#Results)
+* [How to run](#Howtorun)
 
 ## Objective:
 
@@ -18,10 +19,25 @@ The primary objective of this project was to develop and evaluate the APG-RRT al
 - Sampling probabilities are dynamically adjusted based on the algorithm’s history, with successful expansions reinforcing guide paths and failed attempts reducing their weight. To ensure safe navigation, obstacle boundaries are expanded with a buffer to prevent near-collision trajectories.
 - At the same time, the algorithm retains a degree of random exploration to avoid local minima, preserving the exploratory nature of RRT. The implementation also integrates seamlessly with ROS2, where planned paths can be published as topics and visualized in RViz.
 
-    <img width="675" height="609" alt="image" src="https://github.com/user-attachments/assets/91f4d641-3cbe-4b3a-b119-ecfb2b17036b" />
-         (APG-RRT Structure/Framework)
+<img width="675" height="609" alt="image" src="https://github.com/user-attachments/assets/91f4d641-3cbe-4b3a-b119-ecfb2b17036b" />
 
-## Implementation:
+(APG-RRT Structure/Framework)
+
+## Results:
+### 2D Implementation:
+<img width="743" height="811" alt="image" src="https://github.com/user-attachments/assets/6b1a0beb-51d6-42a2-8f73-314f5bd32861" />
+
+(Green path depicts APG-RRT, Red path depicts standard RRT)
+
+<img width="473" height="236" alt="image" src="https://github.com/user-attachments/assets/e5571c6f-d2e3-43cb-a05b-b7dcbf93e2d9" />
+
+(APG-RRT & Standard RRT Comparison Table)
+
+### ROS2 Implementation:
+
+<img width="644" height="658" alt="image" src="https://github.com/user-attachments/assets/73c0abc3-fd55-48d3-a018-147792550a4a" /> <img width="675" height="446" alt="image" src="https://github.com/user-attachments/assets/b218c669-315f-405d-a9af-69e5093c48fb" />
+
+## How to run:
 ### To run the APG_RRT path planner in ROS2:
 - Build and source the workspace
 - ros2 run path_planner apg_rrt_planner
@@ -33,10 +49,6 @@ The primary objective of this project was to develop and evaluate the APG-RRT al
 - python3 apg_rrt.py
 - python3 APG_RRT_COMPARISON.py (for the comparison plots)
 
-## Results:
 
-<img width="743" height="811" alt="image" src="https://github.com/user-attachments/assets/6b1a0beb-51d6-42a2-8f73-314f5bd32861" />
-
-<img width="473" height="236" alt="image" src="https://github.com/user-attachments/assets/e5571c6f-d2e3-43cb-a05b-b7dcbf93e2d9" />
 
 
