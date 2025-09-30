@@ -29,13 +29,19 @@ The primary objective of this project was to develop and evaluate the APG-RRT al
 
 (Green path depicts APG-RRT, Red path depicts standard RRT)
 
+
 <img width="473" height="236" alt="image" src="https://github.com/user-attachments/assets/e5571c6f-d2e3-43cb-a05b-b7dcbf93e2d9" />
 
 (APG-RRT & Standard RRT Comparison Table)
 
 ### ROS2 Implementation:
 
-<img width="644" height="658" alt="image" src="https://github.com/user-attachments/assets/73c0abc3-fd55-48d3-a018-147792550a4a" /> <img width="675" height="446" alt="image" src="https://github.com/user-attachments/assets/b218c669-315f-405d-a9af-69e5093c48fb" />
+<img width="644" height="658" alt="image" src="https://github.com/user-attachments/assets/73c0abc3-fd55-48d3-a018-147792550a4a" /> 
+
+
+<img width="675" height="446" alt="image" src="https://github.com/user-attachments/assets/b218c669-315f-405d-a9af-69e5093c48fb" />
+
+(APG-RRT Structure/Framework)
 
 ## How to run:
 ### To run the APG_RRT path planner in ROS2:
