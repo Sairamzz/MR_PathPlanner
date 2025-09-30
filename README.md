@@ -2,6 +2,9 @@
 This project was done as a part of the ME 5550 (Mobile Robotics) course at Northeastern University.
 
 * [About the Project](#about)
+* [Objectives](#Objectives)
+* [Features](#Features)
+* [Implementation](#Implementation)
 
 ## About the Project
 
@@ -17,3 +20,8 @@ This project was done as a part of the ME 5550 (Mobile Robotics) course at North
 ### To run the APG_RRT path planner in VSCODE:
 - python3 apg_rrt.py
 - python3 APG_RRT_COMPARISON.py (for the comparison plots)
+
+### Objectives
+### Features
+### Implementation
+### Results
