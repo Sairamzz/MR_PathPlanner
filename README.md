@@ -1,6 +1,8 @@
 # MR_PathPlanner - APG-RRT Path Planner
 This project was done as a part of the ME 5550 (Mobile Robotics) course at Northeastern University.
 
+* [About the Project](#about)
+
 ## About the Project
 
 
